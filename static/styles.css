@@ -1,0 +1,42 @@
+body {
+    font-family: "Ubuntu", sans-serif;
+}
+
+.sidebar {
+    height: 100%;
+    width: 100%;
+    background-color: #6564db;
+    position: fixed;
+}
+
+.transform {
+    -webkit-transition: all 2s ease-in-out;  
+    -moz-transition: all 2s ease-in-out;  
+    -o-transition: all 2s ease-in-out;  
+    -ms-transition: all 2s ease-in-out;  
+    transition: all 2s ease-in-out;
+}
+
+.transform-active {
+    width: 250px;
+}
+
+#logo {
+    padding-left: 10px;
+}
+
+.sidebar > #homebutton:active {
+    width: 250px;
+}
+
+
+#winst-main {
+    padding-left: 150px;
+}
+
+h1 {
+    color: #101d42; 
+}
+
+
+
