@@ -5,131 +5,117 @@
 {% endblock %}
 
 {% block main %}
-<div class="sidebar transform px-3 pt-4">
-            <div class="row justify-content-center text-center align-items-center pb-5">
-                <div class="col">
-                    <img id="logo" src="{{ url_for('static', filename='favicon_white.png')}}" width="75">
-                    <h2 class="text-white"><b>Webshoptools</b></h2>
-                </div>
-            </div>
-            <div class="row justify-content-center text-center align-items-center">
-                <div class="col">
-                    <button id="home-button" class="btn btn-light">Bereken je winst!</button>
-                </div>
-            </div>
-    </div>
-</div>
-<div id="winst-main" class="container pt-4">
-    <div class="col-9 mx-5">
+<div class="row justify-content-center">
+    <div class="col-12 col-lg-9 mx-lg-5">
+
         <!-- TITEL -->
         <div class="row-cols-1 pb-4">
             <div class="col">
                 <h1><b>Bereken de winst van je online webshop</b></h1>
             </div>
         </div>
+
         <form name='winstform' id="form_winst">
             <!-- BASIS INFO -->
-            <div class="row-cols-1">
+            <div class="row row-cols-lg-1">
                 <div class="col">
                     <h4><b>Basis Info</b></h4>
                 </div>
             </div>
             <div class="row pb-5">
-                <div class="col-6">
+                <div class="col-lg-6">
                     <label for="quantity" class="form-label">Afzet</label>
                     <div>
                         <input type="number" value=0 class="form-control" id="quantity" placeholder='0' min='0' step='0.0001' aria-describedby="aantalProducten">
                     </div>
-                    <div id="aantalProducten" class="form-text">Hoeveel producten je van plan bent te verkopen, of al hebt verkocht</div>
                 </div>
-                <div class="col-6">
+                <div class="col-lg-6">
                     <label for="prijs" class="form-label">Verkoopprijs</label>
                     <div>
                         <input type="number" value=0 class="form-control" id="prijs" placeholder='0' min='0' step='0.0001' aria-describedby="verkoopPrijs">
                     </div>
-                    <div id="verkoopPrijs" class="form-text">De verkoopprijs van je product per stuk</div>
                 </div>
             </div>
 
             <!-- IMPORT KOSTEN -->
-            <div class="row-cols-1">
+            <div class="row-cols-lg-1">
                 <div class="col">
                     <h4><b>Import Kosten</b></h4>
                 </div>
             </div>
             <div class="row pb-4">
-                <div class="col-3">
+                <div class="col-lg-3">
                     <label for="Incoterm" class="form-label">ICC Incoterm</label>
                     <div>
-                        <select class="form-control" onchange="incoterm_check()" id="Incoterm" placeholder='DAP' aria-describedby="ICCIncoterm">
+                        <select class="form-select" onchange="incoterm_check()" id="Incoterm" placeholder='DAP' aria-describedby="ICCIncoterm">
                             <option>DAP</option>
                             <option>DDP</option>
                         </select>
                     </div>
                     <div id="ICCIncoterm" class="form-text">Manier van importeren</div>
                 </div>
-                <div class="col-5">
+                <div class="col-lg-5">
                     <label for="invoerrechten" class="form-label">Invoerrechten</label>
                     <div>
                         <input type="number" value=0 class="form-control" id="invoerrechten" placeholder='0' min='0' max='1' step='0.0001' aria-describedby="invoerRechten">
                     </div>
-                    <div id="invoerRechten" class="form-text">De invoerrechten op je producten (<a href="https://trade.ec.europa.eu/access-to-markets/en/home">zoek je tarief hier op</a>)</div>
+                    <div id="invoerRechten" class="form-text"><a href="https://trade.ec.europa.eu/access-to-markets/en/home">Zoek je percentage hier op</a></div>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4">
                     <label for="douane" class="form-label">Douanetarief</label>
                     <div>
                         <input type="number" value=0 class="form-control" id="douane" placeholder='0' min='0' max='1' step='0.0001' aria-describedby="douaneTarief">
                     </div>
-                    <div id="douaneTarief" class="form-text">Het douanetarief op je producten</div>
+                    <div id="douaneTarief" class="form-text"><a href="https://trade.ec.europa.eu/access-to-markets/en/home">Zoek je percentage hier op</a></div>
                 </div>
             </div>
             <div class="row pb-5">
-                <div class="col-6">
+                <div class="col-lg-6">
                     <label for="kostprijs" class="form-label">Kostprijs</label>
                     <div>
                         <input type="number" value=0 class="form-control" id="kostprijs" placeholder='0' min='0' step='0.0001' aria-describedby="kostPrijs">
                     </div>
-                    <div id="kostPrijs" class="form-text">De kostprijs van je product per stuk</div>
+                    <div id="kostPrijs" class="form-text">De kostprijs per stuk</div>
                 </div>
-                <div class="col-6">
+                <div class="col-lg-6">
                     <label for="verzendkosten" class="form-label">Verzendkosten</label>
                     <div>
                         <input type="number" value=0 class="form-control" id="verzendkosten" placeholder='0' min='0' step='0.0001' aria-describedby="verzendKosten">
                     </div>
-                    <div id="verzendKosten" class="form-text">De verzendkosten van het importeren van je producten</div>
+                    <div id="verzendKosten" class="form-text">De totale verzendkosten van het importeren van je producten</div>
                 </div>
             </div>
 
             <!-- OVERIGE KOSTEN -->
-            <div class="row-cols-1">
+            <div class="row-cols-lg-1">
                 <div class="col">
                     <h4><b>Overige Kosten</b></h4>
                 </div>
             </div>
             <div class="row pb-5">
-                <div class="col-4">
+                <div class="col-lg-4">
                     <label for="verzend" class="form-label">Verzendkosten</label>
                     <div>
                         <input type="number" value=0 class="form-control" id="verzend" placeholder='0' min='0' step='0.0001' aria-describedby="Verzend">
                     </div>
                     <div id="Verzend" class="form-text">De verzendkosten per product</div>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4">
                     <label for="extrakosten" class="form-label">Extra kosten</label>
                     <div>
                         <input type="number" value=0 class="form-control" id="extrakosten" placeholder='0' min='0' step='0.0001' aria-describedby="extraKosten">
                     </div>
                     <div id="extraKosten" class="form-text">Extra kosten (verpakkingsmateriaal etc.)</div>
                 </div>
-                <div class="col-2">
-                    <label for="retour" class="form-label">Retouren %</label>
+                <div class="col-lg-2">
+                    <label for="retour" class="form-label">Retouren</label>
                     <div>
                         <input type="number" value=0 class="form-control" id="retour" placeholder='0' min='0' step='0.0001' aria-describedby="retourPerc">
                     </div>
                     <div id="retourPerc" class="form-text">10% retour = 0.1</div>
                 </div>
-                <div class="col-2">
-                    <label for="afscrift" class="form-label">Afschriften %</label>
+                <div class="col-lg-2">
+                    <label for="afscrift" class="form-label">Afschriften</label>
                     <div>
                         <input type="number" value=0 class="form-control" id="afschrift" placeholder='0' min='0' step='0.0001' aria-describedby="afschriftPerc">
                     </div>
@@ -138,24 +124,24 @@
             </div>            
 
             <!-- BOL.COM -->
-            <div class="row-cols-1">
+            <div class="row-cols-lg-1">
                 <div class="col">
                     <h4><b>Bol.com</b></h4>
                 </div>
             </div>
-            <div class="row-cols-1 pb-3 form-check">
+            <div class="row-cols-lg-1 pb-3 form-check">
                 <input type="checkbox" onchange="enable_bol(this.checked)" class="form-check-input" id="bolcheck">
                 <label class="form-check-label" for="bolcheck">Vink deze checkbox aan als je op Bol.com verkoopt</label>
             </div>
             <div class="row pb-5">
-                <div class="col-6">
+                <div class="col-lg-6">
                     <label for="bolperc" class="form-label">Bol.com percentage</label>
                     <div>
                         <input type="number" value=0 class="form-control" id="bolperc" placeholder='0' min='0' max='1' step='0.0001' aria-describedby="bolPerc" disabled>
                     </div>
                     <div id="bolPerc" class="form-text">Zoek <a href="https://partnerplatform.bol.com/nl/hulp-nodig/financien/de-commissie/">hier</a> het percentage op dat Bol.com pakt, 12% = 0.12</div>
                 </div>
-                <div class="col-6">
+                <div class="col-lg-6">
                     <label for="bolvast" class="form-label">Bol.com vast tarief</label>
                     <div>
                         <input type="number" value=0 class="form-control" id="bolvast" placeholder='0' min='0' max='1' step='0.0001' aria-describedby="bolVast" disabled>

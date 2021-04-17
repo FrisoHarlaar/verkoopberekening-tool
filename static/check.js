@@ -34,9 +34,11 @@ function round(value, decimals) {
     return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
 }
 
-$('#home-button').click(function() {
-    $('.transform').toggleClass('transform-active')
-})
+$('#home-button').hover(
+    function() {
+        $(this).toggleClass('btn-light');
+    }
+);
 
 $("form").submit(function( event ) {
     //  Afzet, cost, sell-price
@@ -150,6 +152,7 @@ $("form").submit(function( event ) {
     var BTW = Bruto_winst * 0.21;
     var Netto_winst = round(Bruto_winst - BTW - Inkomstenbelasting, 2);
 
+    // wel of geen bol_commissie/invoerrechten
     if (bol_commissie > 0) {
         var bol = `<p>Bol commissie: € ${round(bol_commissie, 2)}</p>`
     }

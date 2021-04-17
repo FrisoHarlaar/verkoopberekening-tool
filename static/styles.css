@@ -3,35 +3,25 @@ body {
 }
 
 .sidebar {
-    height: 100%;
-    width: 100%;
-    background-color: #6564db;
-    position: fixed;
+    background-color: rgb(101,100,219);
+    float: none;
 }
+@media screen and (min-width: 576px) {
 
-.transform {
-    -webkit-transition: all 2s ease-in-out;  
-    -moz-transition: all 2s ease-in-out;  
-    -o-transition: all 2s ease-in-out;  
-    -ms-transition: all 2s ease-in-out;  
-    transition: all 2s ease-in-out;
-}
-
-.transform-active {
-    width: 250px;
-}
-
-#logo {
-    padding-left: 10px;
-}
-
-.sidebar > #homebutton:active {
-    width: 250px;
 }
 
 
-#winst-main {
-    padding-left: 150px;
+@media screen and (min-width: 1200px) {    
+    #main-content {
+        margin-left: 200px;
+    }
+
+    .sidebar {
+        height:100%;
+        width: 300px;
+        position:fixed;
+    }
+    
 }
 
 h1 {
