@@ -57,14 +57,14 @@
                 <div class="col-lg-5">
                     <label for="invoerrechten" class="form-label">Invoerrechten</label>
                     <div>
-                        <input type="number" value=0 class="form-control" id="invoerrechten" placeholder='0' min='0' max='1' step='0.0001' aria-describedby="invoerRechten">
+                        <input type="number" value=0 class="form-control" id="invoerrechten" placeholder='0' min='0' max='100' step='0.0001' aria-describedby="invoerRechten">
                     </div>
                     <div id="invoerRechten" class="form-text"><a href="https://trade.ec.europa.eu/access-to-markets/en/home">Zoek je percentage hier op</a></div>
                 </div>
                 <div class="col-lg-4">
                     <label for="douane" class="form-label">Douanetarief</label>
                     <div>
-                        <input type="number" value=0 class="form-control" id="douane" placeholder='0' min='0' max='1' step='0.0001' aria-describedby="douaneTarief">
+                        <input type="number" value=0 class="form-control" id="douane" placeholder='0' min='0' max='100' step='0.0001' aria-describedby="douaneTarief">
                     </div>
                     <div id="douaneTarief" class="form-text"><a href="https://trade.ec.europa.eu/access-to-markets/en/home">Zoek je percentage hier op</a></div>
                 </div>
@@ -110,16 +110,16 @@
                 <div class="col-lg-2">
                     <label for="retour" class="form-label">Retouren</label>
                     <div>
-                        <input type="number" value=0 class="form-control" id="retour" placeholder='0' min='0' step='0.0001' aria-describedby="retourPerc">
+                        <input type="number" value=0 class="form-control" id="retour" placeholder='0' min='0' max='100' step='0.0001' aria-describedby="retourPerc">
                     </div>
-                    <div id="retourPerc" class="form-text">10% retour = 0.1</div>
+                    <div id="retourPerc" class="form-text">10% retour = 10</div>
                 </div>
                 <div class="col-lg-2">
                     <label for="afscrift" class="form-label">Afschriften</label>
                     <div>
-                        <input type="number" value=0 class="form-control" id="afschrift" placeholder='0' min='0' step='0.0001' aria-describedby="afschriftPerc">
+                        <input type="number" value=0 class="form-control" id="afschrift" placeholder='0' min='0' max='100' step='0.0001' aria-describedby="afschriftPerc">
                     </div>
-                    <div id="afschriftPerc" class="form-text">2% afschriften = 0.02</div>
+                    <div id="afschriftPerc" class="form-text">2% afschriften = 2</div>
                 </div>
             </div>            
 
@@ -137,16 +137,16 @@
                 <div class="col-lg-6">
                     <label for="bolperc" class="form-label">Bol.com percentage</label>
                     <div>
-                        <input type="number" value=0 class="form-control" id="bolperc" placeholder='0' min='0' max='1' step='0.0001' aria-describedby="bolPerc" disabled>
+                        <input type="number" value=0 class="form-control" id="bolperc" placeholder='0' min='0' max='100' step='0.0001' aria-describedby="bolPerc" disabled>
                     </div>
-                    <div id="bolPerc" class="form-text">Zoek <a href="https://partnerplatform.bol.com/nl/hulp-nodig/financien/de-commissie/">hier</a> het percentage op dat Bol.com pakt, 12% = 0.12</div>
+                    <div id="bolPerc" class="form-text">Zoek <a href="https://partnerplatform.bol.com/nl/hulp-nodig/financien/de-commissie/">hier</a> het percentage op dat Bol.com pakt</div>
                 </div>
                 <div class="col-lg-6">
                     <label for="bolvast" class="form-label">Bol.com vast tarief</label>
                     <div>
                         <input type="number" value=0 class="form-control" id="bolvast" placeholder='0' min='0' max='1' step='0.0001' aria-describedby="bolVast" disabled>
                     </div>
-                    <div id="bolVast" class="form-text">het vaste tarief dat Bol.com pakt per product</div>
+                    <div id="bolVast" class="form-text">Het vaste tarief dat Bol.com pakt per product</div>
                 </div>
             </div>
             <div class="d-grid pb-5">

@@ -64,13 +64,12 @@ $("form").submit(function( event ) {
         }
     }
 
-    console.log(form_data);
-
     // Kosten in euro en rechten
     var Total_C_eur = form_data['Cost'] * form_data['Q'];
     
-    var invoerrechten = Total_C_eur * form_data['Invoer'];
-    var douanerechten = Total_C_eur * form_data['Douane'];
+    // Maak percentages van input
+    var invoerrechten = Total_C_eur * (form_data['Invoer'] / 100);
+    var douanerechten = Total_C_eur * (form_data['Douane'] / 100);
 
     // Totale kosten
     var Kosten = round(Total_C_eur + invoerrechten + douanerechten + form_data['Ship'] + form_data['Extra'], 2);
@@ -80,13 +79,13 @@ $("form").submit(function( event ) {
 
     // Verzendkosten en retourkosten; bedrijfskosten
     var Verzendkosten_totaal = form_data['Q'] * form_data['Verzend'];
-    var Retour_kosten = form_data['Q'] * form_data['Retour'] * (form_data['Verzend'] * 2);
-    var Verwachte_afschriften = (form_data['Q']  * form_data['Afschrift']) * form_data['Cost'];
+    var Retour_kosten = form_data['Q'] * (form_data['Retour'] / 100) * (form_data['Verzend'] * 2);
+    var Verwachte_afschriften = (form_data['Q']  * (form_data['Afschrift'] / 100)) * form_data['Cost'];
 
     // Netto omzet
     var N_O = B_O - Kosten;
 
-    var bol_commissie = ((form_data['P'] * form_data['BolP'] + form_data['BolV']) * form_data['Q']) * 1.21;
+    var bol_commissie = ((form_data['P'] * (form_data['BolP'] / 100) + form_data['BolV']) * form_data['Q']) * 1.21;
 
     // Netto omzet - bedrijfskosten
     var Bruto_winst = N_O - Verzendkosten_totaal - Retour_kosten - Verwachte_afschriften - bol_commissie;

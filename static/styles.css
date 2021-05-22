@@ -10,6 +10,13 @@ body {
 
 }
 
+a {
+    color: rgb(101,100,219);
+}
+
+a:hover {
+    color:#101d42;
+}
 
 @media screen and (min-width: 1200px) {    
     #main-content {
